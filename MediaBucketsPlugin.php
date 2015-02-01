@@ -19,6 +19,12 @@ class MediaBucketsPlugin extends Omeka_Plugin_AbstractPlugin
         'admin_navigation_main'
         );
     
+    public function setUp()
+    {
+        parent::setUp();
+        add_shortcode('media_buckets', array('MediaBucketsPlugin', 'shortcode'));
+    }
+    
     public function hookInstall($args)
     {
         //install the MediaBucket ItemType
@@ -69,7 +75,30 @@ class MediaBucketsPlugin extends Omeka_Plugin_AbstractPlugin
                 );
         return $tabs;
     }
-    
+
+    public static function shortcode($args, $view)
+    {
+        if (isset($args['record_class']) && isset($args['id'])) {
+            $recordClass = Inflector::classify($args['record_class']);
+            $record = get_db()->getTable($recordClass)->find($args['id']);
+            $bucket = self::getBucketForRecord($record);
+            //huh. didn't like the camelCased arg name itemType
+            if (isset($args['gallery'])) {
+                if (isset($args['image_type'])) {
+                    return media_buckets_record_gallery($record, array(), $args['image_type']);
+                } else {
+                    return media_buckets_record_gallery($record);
+                }
+            } else {
+                if (isset($args['image_type'])) {
+                    return media_buckets_record_image($record, 0, $args['image_type']);
+                } else {
+                    return media_buckets_record_image($record);
+                }
+            }
+        }
+    }
+
     public static function getBucketForRecord($record)
     {
         $db = get_db();
