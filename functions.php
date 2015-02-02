@@ -19,6 +19,8 @@ function media_buckets_record_image($record, $index = 0, $imageType = 'thumbnail
         }
         return item_image($imageType, $props, $index, $bucket);
     }
+    //fallback to record_image
+    return record_image($record, $imageType, $props);
 }
 
 function media_buckets_record_gallery($record, $attrs = array(), $imageType = 'square_thumbnail', $filesShow = false)
@@ -27,4 +29,6 @@ function media_buckets_record_gallery($record, $attrs = array(), $imageType = 's
     if($bucket) {
         return item_image_gallery($attrs, $imageType, $filesShow, $bucket);
     }
+    //fallback to record_image 
+    return record_image($record, $imageType, $props);
 }
