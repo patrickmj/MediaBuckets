@@ -3,9 +3,9 @@ Omeka plugin that allows Items of type "MediaBucket' to be a (optionally) seques
 
 ## Background
 
-WordPress users coming to Omeka are often stymied be not having a media upload, for uploading file to incorporate elsewhere. In the Omeka model, all files uploaded are attached to Omeka Items. But, sometimes files are not properly understood as Items in Omeka.
+WordPress users coming to Omeka are often stymied by not having a media upload, for uploading files to incorporate elsewhere. In the Omeka model, all files uploaded are attached to Omeka Items. But, sometimes files are not properly understood as Items in an Omeka site.
 
-The standard workaround has been to upload files as items, then pull in the files ignoring the items. That works, but raised questions about "What is an Item in Omeka, anyway?". Technologically, that's what it is. but conceptually and presentationally, maybe that kind of Item isn't really an "Item" for presentation. This leads to a conflict between the presentation needs and the conceptual needs.
+The standard workaround has been to upload files as items, then pull in the files ignoring the items. That works, but raises questions about "What is an Item in Omeka, anyway?". Technologically, that's what it is. but conceptually and presentationally, maybe that kind of Item isn't really an "Item" for presentation. This leads to a conflict between the presentation needs and the conceptual needs.
 
 This plugin is an attempt to mitigate that pain.
 
