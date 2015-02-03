@@ -43,7 +43,7 @@ Remember, MediaBuckets in this plugin ARE ITEMS in Omeka. I'm just helping to co
 
 ## Shortcodes
 
-A shortcode like this will let you insert a gallery of images for a collection
+A shortcode like this will let you insert a gallery of images for a collection. The shortcodes presume that you have created MediaBucket Items with the collection or exhibit data set on the bucket. That is, these work when there is a bucket with `collection` set to `119`.
 
 ```
 [media_buckets record_class='collection' id='119'  gallery='true' image_type='fullsize']
