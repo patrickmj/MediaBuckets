@@ -30,5 +30,5 @@ function media_buckets_record_gallery($record, $attrs = array(), $imageType = 's
         return item_image_gallery($attrs, $imageType, $filesShow, $bucket);
     }
     //fallback to record_image 
-    return record_image($record, $imageType, $props);
+    return record_image($record, $imageType, array());
 }
